@@ -9,10 +9,10 @@ function ItemModal({ item, onClose, onEnquire }) {
   const getAllImages = () => {
     const images = []
     if (item.cover_image) {
-      images.push(`http://localhost:5000${item.cover_image}`)
+      images.push(`https://item-corner.onrender.com${item.cover_image}`)
     }
     if (item.additional_images && Array.isArray(item.additional_images)) {
-      const additionalImages = item.additional_images.map((img) => `http://localhost:5000${img}`)
+      const additionalImages = item.additional_images.map((img) => `https://item-corner.onrender.com${img}`)
       images.push(...additionalImages)
     }
     return images

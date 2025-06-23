@@ -70,7 +70,7 @@ function EnquiryForm({ item, onClose, onSuccess }) {
         message: formData.message.trim(),
       }
 
-      const response = await axios.post("http://localhost:5000/api/enquiries/send", enquiryData)
+      const response = await axios.post("https://item-corner.onrender.com/api/enquiries/send", enquiryData)
 
       console.log("✅ Enquiry sent successfully:", response.data)
 
@@ -123,7 +123,7 @@ function EnquiryForm({ item, onClose, onSuccess }) {
         <div className="bg-gray-50 p-4 border-b">
           <div className="flex items-center space-x-3">
             <img
-              src={`http://localhost:5000${item.cover_image}` || "/placeholder.svg"}
+              src={`https://item-corner.onrender.com${item.cover_image}` || "/placeholder.svg"}
               alt={item.name}
               className="w-16 h-16 object-cover rounded-lg"
               onError={(e) => {

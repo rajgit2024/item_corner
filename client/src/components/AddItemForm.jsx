@@ -111,7 +111,7 @@ function AddItemForm({ onItemAdded }) {
         additional_images: formData.additional_images.map((img) => img.name),
       })
 
-      const res = await axios.post("http://localhost:5000/api/items/add", data, {
+      const res = await axios.post("https://item-corner.onrender.com/api/items/add", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

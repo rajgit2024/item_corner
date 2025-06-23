@@ -23,10 +23,10 @@ function ViewItem() {
       setLoading(true)
       setError(null)
 
-      console.log("🔍 Starting API call to fetch items...")
-      const res = await axios.get("http://localhost:5000/api/items/get")
+      console.log(" Starting API call to fetch items...")
+      const res = await axios.get("https://item-corner.onrender.com/api/items/get")
 
-      console.log("✅ API Response:", res.data)
+      console.log("API Response:", res.data)
 
       let itemsData = []
       if (Array.isArray(res.data)) {
@@ -35,10 +35,10 @@ function ViewItem() {
         itemsData = res.data.items
       }
 
-      console.log("🎯 Final processed items:", itemsData)
+      console.log(" Final processed items:", itemsData)
       setItems(itemsData)
     } catch (error) {
-      console.error("❌ API Error:", error)
+      console.error("API Error:", error)
       setError(`Failed to load items: ${error.message}`)
     } finally {
       setLoading(false)
@@ -46,7 +46,7 @@ function ViewItem() {
   }
 
   const handleItemClick = (item) => {
-    console.log("🖱️ Item clicked:", item)
+    console.log("Item clicked:", item)
     setSelectedItem(item)
   }
 

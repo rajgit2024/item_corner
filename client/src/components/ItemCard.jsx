@@ -7,7 +7,7 @@ function ItemCard({ item, onClick }) {
       {/* Item Image */}
       <div className="w-full h-48 overflow-hidden">
         <img
-          src={`http://localhost:5000${item.cover_image}`}
+          src={`https://item-corner.onrender.com${item.cover_image}`}
           alt={item.name}
           className="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
         />
