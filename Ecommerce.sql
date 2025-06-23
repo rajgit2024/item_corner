@@ -5,8 +5,6 @@
 -- Dumped from database version 17rc1
 -- Dumped by pg_dump version 17rc1
 
--- Started on 2025-06-22 12:47:19
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -24,8 +22,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 218 (class 1259 OID 33275)
--- Name: items; Type: TABLE; Schema: public; Owner: postgres
+-- Name: items; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.items (
@@ -38,11 +35,8 @@ CREATE TABLE public.items (
 );
 
 
-ALTER TABLE public.items OWNER TO postgres;
-
 --
--- TOC entry 217 (class 1259 OID 33274)
--- Name: items_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: items_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.items_id_seq
@@ -54,35 +48,46 @@ CREATE SEQUENCE public.items_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.items_id_seq OWNER TO postgres;
-
 --
--- TOC entry 4849 (class 0 OID 0)
--- Dependencies: 217
--- Name: items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.items_id_seq OWNED BY public.items.id;
 
 
 --
--- TOC entry 4696 (class 2604 OID 33278)
--- Name: items id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: items id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.items ALTER COLUMN id SET DEFAULT nextval('public.items_id_seq'::regclass);
 
 
 --
--- TOC entry 4698 (class 2606 OID 33282)
--- Name: items items_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Data for Name: items; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.items (id, name, type, description, cover_image, additional_images) FROM stdin;
+4	Vintage Car	Electronics	A Car with their own aura	/uploads/coverImage-1750571319280.png	{/uploads/additionalImages-1750571319286.png,/uploads/additionalImages-1750571319319.png}
+5	Icon Car	Sports Gear	This is 1960 iconic car,Raj's the actor drove this	/uploads/coverImage-1750571420648.jpg	{/uploads/additionalImages-1750571420721.jpg}
+6	hello	Books	hello world	/uploads/coverImage-1750571723750.png	{/uploads/additionalImages-1750571723768.png}
+7	hello good	Books	Nice book	/uploads/coverImage-1750572858774.png	{/uploads/additionalImages-1750572858779.png,/uploads/additionalImages-1750572858781.png}
+\.
+
+
+--
+-- Name: items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.items_id_seq', 7, true);
+
+
+--
+-- Name: items items_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.items
     ADD CONSTRAINT items_pkey PRIMARY KEY (id);
 
-
--- Completed on 2025-06-22 12:47:20
 
 --
 -- PostgreSQL database dump complete
